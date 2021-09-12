@@ -15,13 +15,35 @@
     "pages/im/im",
     "pages/im/room/room"
   ],
+  "cloud":true
+  ,
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTitleText": "地铁足迹系统",
     "navigationBarTextStyle": "black"
   },
+  "plugins": {
+		"subway": {
+			"version": "1.0.10",
+			"provider": "wx6aaf93c4435fa1c1"
+		},
+		"routePlan": {
+			"version": "1.0.6",
+			"provider": "wx50b5593e81dd937a"
+		},
+		"chooseLocation": {
+			"version": "1.0.4",
+			"provider": "wx76a9a06e5b4e693e"
+		}
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "你的位置信息将用于小程序定位"
+		}
+	},
   "sitemapLocation": "sitemap.json",
   "style": "v2"
+  
 }

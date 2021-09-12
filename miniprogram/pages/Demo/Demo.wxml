@@ -1,2 +1,8 @@
 <!--pages/Demo/Demo.wxml-->
-<text>pages/Demo/Demo.wxml</text>
+<!--pages/index/index.wxml-->
+<view class="container">
+	<button type="primary" bindtap="trainFind">地铁查询</button>
+	<button type="primary" bindtap="routePlanning">路线规划</button>
+	<button type="primary" bindtap="Location">地图选点</button>
+</view>
+

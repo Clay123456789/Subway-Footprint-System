@@ -1,66 +1,63 @@
 // pages/Demo/Demo.js
+// 引入SDK核心类，js文件根据自己业务，位置可自行放置
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  trainFind(){
+    wx.cloud.init() 
+    let key = 'GYNBZ-6QNE4-C3VU4-X4D3O-NNON2-SVBEJ';
+    let referer = '地铁足迹系统'; 
+    let startPoint =JSON.stringify({  //起点
+      //天通苑,40.0752145100,116.4131069183
+      'name': '天通苑',
+      'latitude': 40.0752145100,
+      'longitude': 116.4131069183
+  }); 
+    let endPoint = JSON.stringify({  //终点
+      //南锣鼓巷,39.9331372740,116.4032471180
+	      'name': '南锣鼓巷',
+	      'latitude': 39.9331372740,
+	      'longitude': 116.4032471180
+	  });
+	  wx.navigateTo({
+	   url: 'plugin://subway/index?key=' + key + '&referer=' + referer 
+	  });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  routePlanning(){
+	  let key = 'GYNBZ-6QNE4-C3VU4-X4D3O-NNON2-SVBEJ';
+    let referer =JSON.stringify({  //起点
+      //天通苑,40.0752145100,116.4131069183
+      'name': '天通苑',
+      'latitude': 40.0752145100,
+      'longitude': 116.4131069183
+  }); 
+    let endPoint = JSON.stringify({  //终点
+      //南锣鼓巷,39.9331372740,116.4032471180
+	      'name': '南锣鼓巷',
+	      'latitude': 39.9331372740,
+	      'longitude': 116.4032471180
+	  });
+	  wx.navigateTo({
+	      url: 'plugin://routePlan/index?key=' + key + '&referer=' + referer + '&endPoint=' + endPoint
+	  });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  Location(){
+	  let key = 'GYNBZ-6QNE4-C3VU4-X4D3O-NNON2-SVBEJ';
+	  let referer = '地铁足迹系统'; 
+	  const location = JSON.stringify({
+	    latitude: 39.89631551,
+	    longitude: 116.323459711
+	  });
+	  const category = '出行服务';
+	   
+	  wx.navigateTo({
+	    url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location + '&category=' + category
+	  });
+	  }
 })
