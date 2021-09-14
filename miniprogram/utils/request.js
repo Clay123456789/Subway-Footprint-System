@@ -6,12 +6,10 @@ function getCommonHeader() {
     'Content-type': 'application/json'
   };
   // 如果token有值则带上
-  let token = wx.getStorageSync("token");
+  let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic3R1ZGVudCIsImlkIjoiMSIsImV4cCI6MTYzMjIyNjA2MiwidXNlcm5hbWUiOiJDbGF5In0.G226UCi_qqCWUkiI1C4QNY_vfpanf6ppl2friJeG8PE";
  
   if (token) {
-    header = Object.assign({}, header, {
-      'Authorization': 'Bearer ' + token
-    });
+    //header['token']= token;
   }
   return header;
 };

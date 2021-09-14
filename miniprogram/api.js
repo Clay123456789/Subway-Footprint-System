@@ -14,12 +14,20 @@ module.exports = {
   },
  
    // post示例
-   test: function (data, config = {}) {
+   login: function (data, config = {}) {
+    return utils.postRequest(
+      `${baseUrl}/user/login`,
+      data,
+      utils.getCommonHeader(),
+      config
+    );
+  },
+  test: function (data, config = {}) {
     return utils.postRequest(
       `${baseUrl}test`,
       data,
       utils.getCommonHeader(),
       config
     );
-  },
+  }
 }

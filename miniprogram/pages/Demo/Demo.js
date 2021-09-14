@@ -64,15 +64,16 @@ Page({
     let params={
       username:"Clay"
     }
-    api.hello(params).then(res => {
+    api.test(params).then(res => {
          console.log(res);
        })
   },
   PostRequest(){
     let params={
-      username:"Clay"
+      username:"Clay",
+      password:"123"
     };
-    api.test(params).then(res => {
+    api.login(params).then(res => {
          console.log(res);
        })
   }
