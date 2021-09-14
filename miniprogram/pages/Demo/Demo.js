@@ -1,6 +1,6 @@
 // pages/Demo/Demo.js
 // 引入SDK核心类，js文件根据自己业务，位置可自行放置
-var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
+const api = require('../../api.js');
 const app = getApp()
 Page({
   data: {
@@ -59,5 +59,22 @@ Page({
 	  wx.navigateTo({
 	    url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer + '&location=' + location + '&category=' + category
 	  });
-	  }
+  },
+  GetRequest(){
+    let params={
+      username:"Clay"
+    }
+    api.hello(params).then(res => {
+         console.log(res);
+       })
+  },
+  PostRequest(){
+    let params={
+      username:"Clay"
+    };
+    api.test(params).then(res => {
+         console.log(res);
+       })
+  }
+    
 })

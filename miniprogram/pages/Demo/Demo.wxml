@@ -6,3 +6,7 @@
 	<button type="primary" bindtap="Location">地图选点</button>
 </view>
 
+<view class="container">
+	<button type="primary" bindtap="GetRequest">发送Get请求</button>
+	<button type="primary" bindtap="PostRequest">发送Post请求</button>
+</view>
